@@ -1,0 +1,141 @@
+.movie-details-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s;
+  }
+  
+  .movie-details-content {
+    background-color: white;
+    border-radius: 10px;
+    overflow: auto;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 90vh;
+    position: relative;
+    animation: slideUp 0.3s;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .movie-details-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .movie-details-poster img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details-title {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    color: #032541;
+  }
+  
+  .movie-meta {
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  .separator {
+    margin: 0 8px;
+  }
+  
+  .movie-genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .genre-tag {
+    background-color: #032541;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .rating-container {
+    margin-bottom: 20px;
+  }
+  
+  .imdb-rating {
+    display: inline-block;
+    background-color: #f5c518;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .rating-label {
+    margin-right: 5px;
+  }
+  
+  .rating-value {
+    font-size: 1.2rem;
+  }
+  
+  .movie-plot h3,
+  .movie-people h3 {
+    color: #032541;
+    margin-bottom: 5px;
+  }
+  
+  .movie-plot p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .person-group {
+    margin-bottom: 15px;
+  }
+  
+  .person-group p {
+    margin: 0;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    .movie-details-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .movie-details-poster {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
